@@ -20,9 +20,17 @@ import _ from "lodash";
 import express, { response } from 'express';
 import {db} from './db.js';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
+//load the environment variable to process.env
+dotenv.config();
 // db.close();
 const app = express();
+
+
+//using .env file hiding important data
+const PORT=process.env.PORT || 3000;
+
 
 //parse the data and the data getting from user end using body parser
 app.use(bodyParser.json()); //it store data in the "req.body";
@@ -63,6 +71,6 @@ app.use('/',PersonRouter);
 app.use('/menu',MenuRouter)
 
 
-app.listen(3000,()=>{
-    console.log(`App is running on 3000`);
+app.listen(PORT,()=>{
+    console.log(`App is running on ${PORT}`);
 })
