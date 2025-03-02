@@ -5,7 +5,7 @@ dotenv.config();
 // const url=process.env.MONGODB_LOCAL_URL;
 // const url=`mongodb+srv://pushpamsingh204:Push2005@cluster0.fg4pw.mongodb.net/`
 
-const url=process.env.MONGODB_ATLAS_URL
+const url=process.env.MONGODB_ATLAS_URL;
 
 mongoose.connect(url,{
     // useNewUrlParser: true,
